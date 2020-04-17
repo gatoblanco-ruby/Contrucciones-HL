@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'welcome/index'
   resources :tasks
-  root 'application#hello'
+  post 'tasks/index'
+  root 'welcome#index'
 end
