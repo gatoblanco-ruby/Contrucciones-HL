@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Horas:</strong>
+  <%= @pp.horas %>
+</p>
+
+<p>
+  <strong>Worker:</strong>
+  <%= @pp.worker_id %>
+</p>
+
+<p>
+  <strong>L:</strong>
+  <%= @pp.l %>
+</p>
+
+<%= link_to 'Edit', edit_pp_path(@pp) %> |
+<%= link_to 'Back', pps_path %>

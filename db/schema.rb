@@ -10,11 +10,58 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_27_042817) do
+ActiveRecord::Schema.define(version: 2020_04_17_025625) do
+
+  create_table "facturacions", force: :cascade do |t|
+    t.integer "horas"
+    t.integer "worker_cedula"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "horas", force: :cascade do |t|
+    t.integer "cedula"
+    t.string "tipo"
+    t.integer "horas"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "pps", force: :cascade do |t|
+    t.integer "horas"
+    t.integer "worker_id"
+    t.string "l"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "tasks", force: :cascade do |t|
     t.string "name"
     t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "tiempos", force: :cascade do |t|
+    t.integer "horas"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "trabajadors", force: :cascade do |t|
+    t.integer "cedula"
+    t.string "primary"
+    t.string "key"
+    t.string "name"
+    t.string "eps"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "workers", force: :cascade do |t|
+    t.integer "cedula"
+    t.string "name"
+    t.string "eps"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

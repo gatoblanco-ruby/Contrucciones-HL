@@ -1,0 +1,32 @@
+<%= form_with(model: pp, local: true) do |form| %>
+  <% if pp.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pp.errors.count, "error") %> prohibited this pp from being saved:</h2>
+
+      <ul>
+        <% pp.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :horas %>
+    <%= form.number_field :horas %>
+  </div>
+
+  <div class="field">
+    <%= form.label :worker_id %>
+    <%= form.number_field :worker_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :l %>
+    <%= form.text_field :l %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

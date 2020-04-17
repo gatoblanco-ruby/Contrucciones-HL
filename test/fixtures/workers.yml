@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cedula: 1
+  name: MyString
+  eps: MyString
+
+two:
+  cedula: 1
+  name: MyString
+  eps: MyString
