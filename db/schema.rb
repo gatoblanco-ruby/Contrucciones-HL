@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_17_025625) do
+ActiveRecord::Schema.define(version: 2020_05_02_204855) do
 
   create_table "facturacions", force: :cascade do |t|
     t.integer "horas"
@@ -25,6 +25,15 @@ ActiveRecord::Schema.define(version: 2020_04_17_025625) do
     t.integer "horas"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "osos", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "password_digest"
+    t.index ["email"], name: "index_osos_on_email", unique: true
   end
 
   create_table "pps", force: :cascade do |t|

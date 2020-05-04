@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'osos/new'
   get 'users/new'
   resources :pps
   resources :workers
@@ -6,4 +7,8 @@ Rails.application.routes.draw do
   get 'welcome/index'
   resources :tasks
   root 'welcome#index'
+  get 'quienessomos'  => 'nosotros#quienessomos'
+  get 'contacto'  => 'contacto#contacto'
+  get 'servicio'  => 'servicios#servicio'
+  get 'signup'  => 'users#new'
 end
