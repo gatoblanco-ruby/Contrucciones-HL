@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   get 'quienessomos'  => 'nosotros#quienessomos'
   get 'contacto'  => 'contacto#contacto'
   get 'servicio'  => 'servicios#servicio'
-  get 'signup'  => 'users#new'
+  get 'signup'  => 'osos#new'
+  resources :osos
 end

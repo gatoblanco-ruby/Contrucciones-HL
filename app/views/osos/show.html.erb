@@ -1,0 +1,11 @@
+<%= @oso.name %>, <%= @oso.email %>
+<!--Esta parte del codigo ayuda al diseño de la pagina-->
+<div class="row">
+  <aside class="col-md-4">
+  <section class="user_info">
+  <!--Esta parte del codigo agrega la imagen de usuario-->
+    <h1>
+        <%= gravatar_for @oso %>
+        <%= @oso.name %>
+    </h1>
+</div>
