@@ -1,15 +1,12 @@
 Rails.application.routes.draw do
-  get 'osos/new'
-  get 'users/new'
-  resources :pps
-  resources :workers
+  devise_for :administrators
+  devise_for :fellows
   resources :welcome
-  get 'welcome/index'
-  resources :tasks
   root 'welcome#index'
+  #Botones de la pagina, para controladores 
   get 'quienessomos'  => 'nosotros#quienessomos'
+  get 'administrador'  => 'admin#administrador'
   get 'contacto'  => 'contacto#contacto'
   get 'servicio'  => 'servicios#servicio'
-  get 'signup'  => 'osos#new'
-  resources :osos
+  resources :pipas
 end

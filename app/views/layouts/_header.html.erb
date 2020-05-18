@@ -1,14 +1,29 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<header class="navbar-fixed navbar-inverse">
   <div class="container">
-    <%= link_to "HL Construcciones", '#', id: "logo" %>
+    <%= link_to "HL Construcciones", root_path, id: "logo" %>
     <nav>
-      <ul class="nav navbar-nav navbar-right">
-      <li><%= link_to "Inicio",    root_path %></li>
-      <li><%= link_to "Nosotros",  quienessomos_path %></li>
-      <li><%= link_to "Proyecctos", '#' %></li>
-      <li><%= link_to "Servicios", servicio_path %></li>
-      <li><%= link_to "Log in", '#' %></li>
-      </ul>
+      <ul class="nav  navbar-nav navbar-right">
+      
+        <li><%= link_to "Inicio",    root_path %></li>
+        <li><%= link_to "Nosotros",  quienessomos_path %></li>
+        <li><%= link_to "Proyecctos", '#' %></li>
+        <li><%= link_to "Servicios", servicio_path %></li>
+       
+       
+      
+        <%- if fellow_signed_in? %>
+        <li><%= link_to "Mi Perfil", '#' %></li>
+        <li><%= link_to "Salir", destroy_fellow_session_path, method: :delete %></li>
+        <% else %>
+        <li><%= link_to "Log in", new_fellow_session_path  %></li>  
+        <% end %>
+        <%- if administrator_signed_in? %>
+        <li><%= link_to "Salir", destroy_administrator_session_path, method: :delete %></li>
+        <li><%= link_to "Administrador", administrador_path %></li>
+        
+        <% end %>
+      
+        </ul>
     </nav>
   </div>
 </header>

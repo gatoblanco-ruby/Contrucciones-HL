@@ -1,0 +1,2 @@
+module PipasHelper
+end

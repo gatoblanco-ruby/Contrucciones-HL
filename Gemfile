@@ -3,6 +3,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.5'
 
+gem 'jquery-rails'
+gem 'font_awesome5_rails'
+
+gem 'devise'
+
 gem 'bcrypt', '~> 3.1', '>= 3.1.13'
 
 gem 'bootstrap-sass'
