@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_18_015052) do
+ActiveRecord::Schema.define(version: 2020_05_19_013156) do
 
   create_table "administrators", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(version: 2020_05_18_015052) do
     t.datetime "remember_created_at"
     t.string "nombre"
     t.integer "cedula"
-    t.integer "hora"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_fellows_on_email", unique: true
@@ -50,6 +49,13 @@ ActiveRecord::Schema.define(version: 2020_05_18_015052) do
     t.integer "cedula"
     t.string "tipo"
     t.integer "horas"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "hours", force: :cascade do |t|
+    t.integer "fellow_cedula"
+    t.integer "hora"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

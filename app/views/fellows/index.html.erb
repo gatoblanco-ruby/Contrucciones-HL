@@ -1,0 +1,22 @@
+<h1>Miembros</h1>
+<table border="1" >
+<tr>
+<thead>
+<th>Nombre</th>
+<th>Email</th>
+<th>Cedula</th>
+<th>Modificar</th>
+</thead>
+</tr>
+<% @fellows.each do |fellow|%>
+    <tr>
+    <td><%= fellow.nombre %></td>
+    <td><%= link_to fellow.email, fellow_path(fellow) %></td>
+    <td><%= fellow.cedula %></td>
+    <td><%= link_to "Editar", edit_fellow_path(fellow) %></td>
+    <td><%= link_to "Eliminar", fellow, method: :delete, data: {confirm: "¿Desea eliminar los datos de esta persona?"} %></td>
+    </tr>
+<% end %>
+
+</table>
+

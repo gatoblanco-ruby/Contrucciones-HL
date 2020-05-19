@@ -5,8 +5,9 @@ Rails.application.routes.draw do
   root 'welcome#index'
   #Botones de la pagina, para controladores 
   get 'quienessomos'  => 'nosotros#quienessomos'
-  get 'administrador'  => 'admin#administrador'
+  get 'administrador'  => 'administrador#administrador'
   get 'contacto'  => 'contacto#contacto'
   get 'servicio'  => 'servicios#servicio'
   resources :pipas
+  resources :fellows
 end

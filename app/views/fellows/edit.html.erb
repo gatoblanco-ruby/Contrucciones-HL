@@ -1,0 +1,20 @@
+<%= form_for @fellow do |f| %>
+    <div>
+        <%= f.label :nombre %>
+        <%= f.text_field :nombre %>
+    </div>
+    
+    <div>
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+    </div>
+
+    <div>
+        <%= f.label :cedula %>
+        <%= f.number_field :cedula %>
+    </div>
+
+    <div>
+        <%= f.submit %>
+    </div>
+<% end %>
